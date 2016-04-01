@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>How many fingers</title>
+</head>
+
+<body>
+
+<p>how many fingers?</p>
+
+<input id="answer" />
+<button id="mybutton">submit</button>
+
+<div><p id="rsltbackground">Result: <span id="result"></span></p></div>
+
+<p>SCORES:</p>
+<p>Human: <span id="human">0</span></p>
+<p>computer: <span id="computer">0</span></p>
+
+<script type="text/javascript">
+
+	document.getElementById("mybutton").onclick=function() {
+
+	var x = Math.random();
+	
+	x=6*x;
+	
+	x=Math.floor(x);
+	
+	var human = 0;
+	
+	var computer = 0;n
+	
+	if (document.getElementById("answer").value=="") {
+		document.getElementById("result").innerHTML = "please input a value";	
+	} 
+	
+	else if (x==document.getElementById("answer").value) {
+		document.getElementById("result").innerHTML = x+" is correct!";
+		document.getElementById("rsltbackground").style.background = "green";
+		document.getElementById("rsltbackground").style.width = "135px";
+		document.getElementById("human").innerHTML = human+1;
+		human = human+1;
+	}
+	else {
+		document.getElementById("result").innerHTML = "incorrect, my number is "+x;
+		document.getElementById("rsltbackground").style.background = "red";
+		document.getElementById("rsltbackground").style.width = "220px";
+		document.getElementById("computer").innerHTML = computer+1;
+		computer = computer+1;
+	}
+	}
+	
+	
+
+</script>
+</body>
+</html>
